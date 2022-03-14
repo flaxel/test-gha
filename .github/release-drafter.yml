@@ -14,13 +14,13 @@ change-title-escapes: '\<*_&'
 version-resolver:
   major:
     labels:
-      - 'type: major'
+      - 'major'
   minor:
     labels:
-      - 'type: minor'
+      - 'minor'
   patch:
     labels:
-      - 'type: patch'
+      - 'patch'
   default: patch
 template: |
   ## Changes
