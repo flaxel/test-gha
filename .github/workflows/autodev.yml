@@ -1,0 +1,13 @@
+name: Autodev
+on:
+  push:
+    branches-ignore:
+      - dev
+  pull_request:
+    types: [labeled, unlabeled, opened, closed]
+
+jobs:
+  autodev:
+    uses: Staffbase/gha-workflows/.github/workflows/template_autodev.yml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
