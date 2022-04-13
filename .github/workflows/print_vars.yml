@@ -1,0 +1,16 @@
+name: Print Variables
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - '**'
+
+jobs:
+  print:
+    name: Printing
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "$GITHUB_CONTEXT"
