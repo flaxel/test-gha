@@ -8,4 +8,3 @@ on:
 jobs:
   update_release_draft:
     uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@fix-wrong-datatype
-
