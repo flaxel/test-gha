@@ -16,7 +16,6 @@ env:
 
 on:
   push:
-    tags: [ '**' ]
 
 jobs:
   create_production_release:
