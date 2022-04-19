@@ -1,18 +1,4 @@
-# Do not change this name, because workflows reference each other by it.
 name: Release Production
-
-env:
-  IMAGE_NAME: private/backend
-
-# Description
-#
-# This workflow creates a production release. It is only creating the release
-# if the tag has the required tag format, please use ./createRelease.sh to create
-# such tags.
-# The workflow is only successful if for the same commit of the Tag, a "Tests"
-# workflow finished successfully. If this workflow was triggered before the Tests
-# were completed, there is a "Rerun Production Release" workflow, which restarts
-# the production release workflow (if any exists) after the tests completed.
 
 on:
   push:
@@ -36,7 +22,6 @@ jobs:
 
       - name: login to registry
         if: steps.query_workflows.outputs.tests_completed == 'true'
-        uses: docker/login-action@v1
         run: echo "other test"
 
   second:
