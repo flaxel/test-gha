@@ -26,5 +26,5 @@ jobs:
 
   second:
     needs: [ first ]
-    if: needs.first.steps.query_workflows.outputs.tests_completed == 'true'
+    if: needs.first.outputs.tests_completed == 'true'
     uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@v1.1.0
