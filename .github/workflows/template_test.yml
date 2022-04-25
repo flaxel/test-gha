@@ -1,5 +1,8 @@
 name: Test
 
+env:
+  REPO: ${{ github.event.repository.name }}
+
 on:
   workflow_call:
     inputs:
@@ -11,12 +14,12 @@ on:
       test2:
         required: false
         default: |-
-          test2_content1${{ github.event.repository.name }}further_content
+          test2_content1$REPOfurther_content
         type: string
       test3:
         required: false
         default: |-
-          "test3_content1${{ github.event.repository.name }}further_content"
+          "test3_content1$REPOfurther_content"
         type: string
 
 jobs:
@@ -27,6 +30,6 @@ jobs:
 
     steps:
       - run: echo ${{ inputs.test1 }}
-      - run: echo ${{ github.event.repository.name }}
+      - run: echo $REPO
       - run: echo ${{ inputs.test2 }}
       - run: echo ${{ inputs.test3 }}
