@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  workflow_call:
+    inputs:
+      test1:
+        required: false
+        default: |-
+          test1_content1
+        type: string
+      gitopsstage:
+        required: false
+        default: |-
+          test2_content1
+          test2_content2
+        type: string
+      gitopsprod:
+        required: false
+        default: |-
+          test3_content1${{ github.name }}further_content
+        type: string
+
+jobs:
+  test:
+
+    name: Test
+    runs-on: ubuntu-20.04
+
+    steps:
+      - run: echo ${{ inputs.test1 }}
+      - run: echo ${{ inputs.test2 }}
+      - run: echo ${{ inputs.test3 }}

@@ -1,0 +1,10 @@
+name: YAMLlint
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  yamllint:
+    uses: .github/workflows/template_test.yml@test
