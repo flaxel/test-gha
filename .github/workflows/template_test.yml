@@ -11,12 +11,12 @@ on:
       test2:
         required: false
         default: |-
-          test2_content1${{ github.name }}further_content
+          test2_content1${{ github.repository.name }}further_content
         type: string
       test3:
         required: false
         default: |-
-          "test3_content1${{ github.name }}further_content"
+          "test3_content1${{ github.repository.name }}further_content"
         type: string
 
 jobs:
@@ -27,6 +27,6 @@ jobs:
 
     steps:
       - run: echo ${{ inputs.test1 }}
-      - run: echo ${{ github.name }}
+      - run: echo ${{ github.repository.name }}
       - run: echo ${{ inputs.test2 }}
       - run: echo ${{ inputs.test3 }}
