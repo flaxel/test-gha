@@ -8,13 +8,13 @@ on:
         default: |-
           test1_content1
         type: string
-      gitopsstage:
+      test2:
         required: false
         default: |-
           test2_content1
           test2_content2
         type: string
-      gitopsprod:
+      test3:
         required: false
         default: |-
           test3_content1${{ github.name }}further_content
