@@ -7,4 +7,4 @@ on:
 
 jobs:
   yamllint:
-    uses: .github/workflows/template_test.yml@test
+    uses: ./.github/workflows/template_test.yml@test
