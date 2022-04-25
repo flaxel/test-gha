@@ -11,12 +11,6 @@ on:
       test2:
         required: false
         default: |-
-          test2_content1
-          test2_content2
-        type: string
-      test3:
-        required: false
-        default: |-
           test3_content1${{ github.name }}further_content
         type: string
 
@@ -29,4 +23,3 @@ jobs:
     steps:
       - run: echo ${{ inputs.test1 }}
       - run: echo ${{ inputs.test2 }}
-      - run: echo ${{ inputs.test3 }}
