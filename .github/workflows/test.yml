@@ -1,4 +1,4 @@
-name: YAMLlint
+name: Test2
 
 on:
   push:
