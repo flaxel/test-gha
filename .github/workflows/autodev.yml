@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Autodev
-        uses: staffbase/autodev-action@v1
+        uses: staffbase/autodev-action@v1.3.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
