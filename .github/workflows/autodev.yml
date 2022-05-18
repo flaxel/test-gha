@@ -18,9 +18,9 @@ jobs:
           fetch-depth: 0
 
       - name: Autodev
-        uses: staffbase/autodev-action@v1.3.0
+        uses: staffbase/autodev-action@fix/custom-comment-fallback
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
           optimistic: true
-          comments: false
+          comments: true
