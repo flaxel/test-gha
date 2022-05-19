@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Autodev
-        uses: staffbase/autodev-action@add-labels
+        uses: staffbase/autodev-action@update-comments
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
