@@ -8,20 +8,6 @@ on:
 
 jobs:
   autodev:
-    name: Build Dev Branch
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-
-      - name: Autodev
-        uses: staffbase/autodev-action@improve-readme
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          optimistic: true
-          labels: true
-          comments: true
+    uses: Staffbase/gha-workflows/.github/workflows/template_autodev.yml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
