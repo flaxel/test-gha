@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Autodev
-        uses: staffbase/autodev-action@update-comments
+        uses: staffbase/autodev-action@improve-readme
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: main
