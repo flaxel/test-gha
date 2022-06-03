@@ -1,9 +1,9 @@
 name: release-git
 
 on:
-  push:
-    tags:
-      - 'v*'
+  on:
+    release:
+      types: [published]
 
 jobs:
   bump-version-and-release:
