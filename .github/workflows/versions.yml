@@ -15,7 +15,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "(v[0-9].[0-9].[0-9])"
-          replace: ${{ github.release.tag_name }}
+          replace: ${{ github.ref_name }}
       - name: Push changes
         uses: EndBug/add-and-commit@v9
         with:
