@@ -21,6 +21,7 @@ jobs:
           title: ":memo: Update Readme Versions"
           body: "all versions in the readme file are bumped"
           commit-message: ":memo: update readme versions"
+          base: main
           labels: |
             documentation
           branch: update-readme
