@@ -6,7 +6,7 @@ on:
 
 jobs:
   update_release_draft:
-    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@main
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@add-release-output
 
   after:
     needs: [update_release_draft]
@@ -22,6 +22,6 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "/(v[0-9].[0-9].[0-9])/g"
+          find: "(v[0-9].[0-9].[0-9])"
           replace: "world"
       - run: git diff
