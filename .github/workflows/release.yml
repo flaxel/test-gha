@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  repository_dispatch:
+    types: [create_release]
+
+jobs:
+  update_release_draft:
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@main
+
+  after:
+    needs: [update_release_draft]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{toJSON(github)}}'
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "/(v[0-9].[0-9].[0-9])/g"
+          replace: "world"
