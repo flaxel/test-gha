@@ -20,4 +20,14 @@ jobs:
         with:
           find: "(v[0-9].[0-9].[0-9])"
           replace: ${{ needs.update_release_draft.outputs.tag_name }}
-      - run: git diff
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'README.md'
+          default_author: user_info
+          message: 'bump readme versions'
+          push: origin main --force
+
+  create_release:
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@add-release-output
+    with:
+      publish: true
