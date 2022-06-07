@@ -1,9 +1,8 @@
 name: Update Readme Versions
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [published]
 
 jobs:
   update_readme:
@@ -15,7 +14,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "(v[0-9].[0-9].[0-9])"
-          replace: ${{ github.ref_name }}
+          replace: ${{ github.release.tag_name }}
       - name: Push changes
         uses: EndBug/add-and-commit@v9
         with:
