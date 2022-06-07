@@ -1,0 +1,25 @@
+name: Update Readme Versions
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  update_readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v3
+      - name: Find and Replace old versions
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "(v[0-9].[0-9].[0-9])"
+          replace: ${{ github.ref_name }}
+      - name: Push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'README.md'
+          default_author: user_info
+          message: 'bump readme versions'
+          new_branch: 'update-readme'
