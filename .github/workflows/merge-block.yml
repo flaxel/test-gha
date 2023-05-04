@@ -1,0 +1,9 @@
+name: Merge 
+
+on:
+ pull_request:
+    types: [labeled, unlabeled]
+
+jobs:
+  stale:
+    uses: Staffbase/gha-workflows/.github/workflows/template_do_not_merge.yml@do-not-merge-action
