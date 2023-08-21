@@ -7,4 +7,4 @@ on:
 
 jobs:
   update_release_draft:
-    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter_weekly.yml@create-reusable-weekly-release-drafter
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@add-default-release-numbers
