@@ -1,0 +1,16 @@
+name: Release Version Detector
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  new_version:
+    uses: Staffbase/gha-workflows/.github/workflows/ttemplate_release_version.yml@main
+
+  echo:
+    runs-on: ubuntu-latest
+    needs: new_version
+    steps:
+      - run: echo ${{ needs.new_version.outputs.new_version }}
