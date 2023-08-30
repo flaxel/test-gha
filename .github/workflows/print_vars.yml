@@ -1,9 +1,9 @@
 name: Print Variables
 
 on:
+  release:
+    types: [published]
   push:
-    tags:
-      - '*'
     branches:
       - '**'
   pull_request:
