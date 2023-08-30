@@ -6,5 +6,13 @@ on:
       - main
 
 jobs:
+  next_version:
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_version.yml@main
+
   update_release_draft:
-    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@add-default-drafter-config
+    needs: next_version
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@main
+    with:
+      name: ${{ needs.next_version.outputs.new_version }}
+      tag: ${{ needs.next_version.outputs.new_tag }}
+      version: ${{ needs.next_version.outputs.new_version }}
