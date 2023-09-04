@@ -11,7 +11,7 @@ jobs:
 
   update_release_draft:
     needs: next_version
-    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@main
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_drafter.yml@checkout-before-release-creation
     with:
       name: ${{ needs.next_version.outputs.new_version }}
       tag: ${{ needs.next_version.outputs.new_tag }}
