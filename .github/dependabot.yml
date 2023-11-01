@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "07:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependencies"
+    ignore:
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-patch" ]
