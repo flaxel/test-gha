@@ -1,0 +1,12 @@
+name: Test
+
+on: push
+
+jobs:
+  test1:
+    uses: ./.github/workflows/test_workflow.yml@main
+    with:
+      force: true
+
+  test2:
+    uses: ./.github/workflows/test_workflow.yml@main
