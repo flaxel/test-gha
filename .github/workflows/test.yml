@@ -4,9 +4,9 @@ on: push
 
 jobs:
   test1:
-    uses: ./.github/workflows/test_workflow.yml@main
+    uses: ./.github/workflows/test_workflow.yml
     with:
       force: true
 
   test2:
-    uses: ./.github/workflows/test_workflow.yml@main
+    uses: ./.github/workflows/test_workflow.yml
