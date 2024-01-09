@@ -7,7 +7,7 @@ on:
 
 jobs:
   new_version:
-    uses: Staffbase/gha-workflows/.github/workflows/template_release_version.yml@main
+    uses: Staffbase/gha-workflows/.github/workflows/template_release_version.yml@add-format-release-version
 
   echo:
     runs-on: ubuntu-latest
