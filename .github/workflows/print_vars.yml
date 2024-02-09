@@ -25,4 +25,4 @@ jobs:
     needs: print
     runs-on: ubuntu-latest
     steps:
-      - run: echo $GITHUB_OUTPUT
+      - run: echo ${{ GITHUB_OUTPUT }}
