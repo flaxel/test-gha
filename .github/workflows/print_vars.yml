@@ -14,5 +14,15 @@ jobs:
     name: Printing
     runs-on: ubuntu-latest
 
+    outputs:
+      test: "Hello World"
+
     steps:
       - run: echo '${{ toJSON(github) }}'
+
+  output:
+    name: Output
+    needs: print
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $GITHUB_OUTPUT
