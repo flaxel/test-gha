@@ -18,11 +18,12 @@ jobs:
       test: "Hello World"
 
     steps:
-      - run: echo '${{ toJSON(github) }}'
+      - run: exit 1
 
   output:
     name: Output
     needs: print
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_OUTPUT
