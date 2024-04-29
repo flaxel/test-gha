@@ -6,11 +6,11 @@ on:
 
 jobs:
   web-ui-tests:
-    if: contains(github.event.pull_request.labels.*.name, 'dev') == 'true'
+    if: contains(github.event.pull_request.labels.*.name, 'dev')
     uses: ./.github/workflows/workflow1.yml
     secrets: inherit
 
   native-ui-tests:
-    if: contains(github.event.pull_request.labels.*.name, 'invalid') == 'true'
+    if: contains(github.event.pull_request.labels.*.name, 'invalid')
     uses: ./.github/workflows/workflow2.yml
     secrets: inherit
