@@ -5,9 +5,6 @@ on:
     types: [labeled]
 
 jobs:
-  check-labels:
-    runs-on: ubuntu-latest
-
   web-ui-tests:
     needs: check-labels
     if: contains(github.event.pull_request.labels.*.name, 'dev') == 'true'
