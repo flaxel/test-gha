@@ -11,11 +11,11 @@ jobs:
   web-ui-tests:
     needs: check-labels
     if: contains(github.event.pull_request.labels.*.name, 'dev') == 'true'
-    uses: ./.github/workflows/print_vars.yml.yml
+    uses: ./.github/workflows/workflow1.yml
     secrets: inherit
 
   native-ui-tests:
     needs: check-labels
     if: contains(github.event.pull_request.labels.*.name, 'invalid') == 'true'
-    uses: ./.github/workflows/print_vars.yml.yml
+    uses: ./.github/workflows/workflow2.yml
     secrets: inherit

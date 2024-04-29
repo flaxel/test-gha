@@ -1,0 +1,11 @@
+name: Workflow2
+
+on:
+  workflow_call:
+
+jobs:
+  output:
+    name: Output
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "workflow 2"
