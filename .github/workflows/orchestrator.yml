@@ -1,0 +1,21 @@
+name: Label Orchestrator
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  check-labels:
+    runs-on: ubuntu-latest
+
+  web-ui-tests:
+    needs: check-labels
+    if: contains(github.event.pull_request.labels.*.name, 'dev') == 'true'
+    uses: ./.github/workflows/print_vars.yml.yml
+    secrets: inherit
+
+  native-ui-tests:
+    needs: check-labels
+    if: contains(github.event.pull_request.labels.*.name, 'invalid') == 'true'
+    uses: ./.github/workflows/print_vars.yml.yml
+    secrets: inherit
