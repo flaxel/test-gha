@@ -10,7 +10,7 @@ on:
     types: [labeled, unlabeled, opened, closed]
   workflow_call:
   workflow_run:
-    workflows: ["Autodev"]
+    workflows: [Autodev]
     types:
       - completed
 
