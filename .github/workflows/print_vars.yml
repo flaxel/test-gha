@@ -25,6 +25,7 @@ jobs:
     steps:
       - run: echo '${{ toJSON(github) }}'
       - run: echo "${{ github.event.workflow_run.pull_requests[0].number }}"
+      - run: echo "${{ github.event.workflow_run.pull_requests[0] }}"
 
   output:
     name: Output
