@@ -16,6 +16,6 @@ jobs:
       name: ${{ needs.next_version.outputs.new_version }}
       tag: ${{ needs.next_version.outputs.new_tag }}
       version: ${{ needs.next_version.outputs.new_version }}
-      publish: true
+      # publish: true
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
